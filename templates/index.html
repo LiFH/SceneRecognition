@@ -1,0 +1,95 @@
+{% block page_css %}
+    <link rel="stylesheet" type="text/css" href="/static/ImgInput/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/ImgInput/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/ImgInput/css/ssi-uploader.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/sideshow/css/component.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+{% endblock %}
+
+{% block mainbody %}
+    <div class="header">
+        <div class="content">
+            <div id="large-header" class="large-header">
+                <canvas id="demo-canvas"></canvas>
+                <h1 class="main-title">场景识别</h1>
+                <p class="sub-title">基于深度学习及大规模图像训练，智能识别图片中的场景信息</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="info-wrap">
+        <h2 class="title">功能介绍</h2>
+        <p class="description">精准识别自然环境下数十种场景，两万种物体及其属性</p>
+        <p>让智能相册管理、照片检索和分类、基于场景内容或物体的广告推荐等功能更加直观。</p>
+    </section>
+
+    <section class="info-wrap">
+        <h2 class="title">功能体验</h2>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {#				<h3>基本演示（支持jpg、gif、txt、png和pdf格式文件）</h3>#}
+                <h5>(目前仅支持jpg格式图片)</h5>
+                <input type="file" multiple id="ssi-upload"/>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="info-wrap">
+        <h2 class="title">应用场景</h2>
+        <div id="containerSlipHover">
+            <ul>
+                <li>
+                    <a >
+                        <img src="/static/jQuerySlipHover/img/1.jpg" title="相册分类">
+                    </a>
+                </li>
+                <li>
+                    <a >
+                        <img src="/static/jQuerySlipHover/img/11.jpg" title="智能美图">
+                    </a>
+                </li>
+                <li>
+                    <a >
+                        <img src="/static/jQuerySlipHover/img/2.jpg" title="照片检索">
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block page_js %}
+    <script src="/static/ImgInput/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="/static/ImgInput/js/ssi-uploader.js"></script>
+    <script src="/static/jQuerySlipHover/js/jquery.sliphover.min.js"></script>
+
+
+    <script src="/static/sideshow/js/TweenLite.min.js"></script>
+    <script src="/static/sideshow/js/EasePack.min.js"></script>
+    <script src="/static/sideshow/js/rAF.js"></script>
+    <script src="/static/sideshow/js/demo-1.js"></script>
+
+    <script type="text/javascript">
+        $('#ssi-upload').ssi_uploader({
+            url: '/sceneRecognition',
+            maxFileSize: 6,
+            allowed: ['jpg', 'gif', 'txt', 'png', 'pdf'],
+            locale: "ch"
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('#containerSlipHover').sliphover();
+        });
+    </script>
+{% endblock %}
+

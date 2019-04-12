@@ -1,0 +1,51 @@
+/* Header */
+.large-header {
+	position: relative;
+	width: 100%;
+	background: #333;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+}
+
+.header .large-header {
+	background-image: url('../img/demo-1-bg.jpg');
+}
+
+
+.main-title {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #f9f1e9;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	font-weight: 200;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+.sub-title {
+	position: absolute;
+	color: #f9f1e9;
+	font-weight: 200;
+	top: 55%;
+	left: 50%;
+
+}
+
+.header .main-title{
+	font-size: 4.2em;
+	letter-spacing: 0.1em;
+}
+.header .sub-title{
+	font-size: 1.2em;
+	letter-spacing: 0.1em;
+	text-align: center;
+}
+
+
+.main-title .thin {
+	font-weight: 200;
+}
